@@ -37,14 +37,13 @@ def main(args):
 
 	json_data = json.loads(r.text)
 
-	# recreate the json collection
+	# recreate the json collection to create an array to return to iosdk
 
 	new_json_data = []
 
 	for item in json_data['data']['messages']:
 		new_json_data.append(item)
 
-	#print(json_data['data'])
 	return {"body": { "data": new_json_data} }
 
 if __name__ == "__main__":
